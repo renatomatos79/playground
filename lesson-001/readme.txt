@@ -3,8 +3,8 @@ Hello dockers,
 Please open a new browser and type:
 https://labs.play-with-docker.com/
 
-Click on Login button and then, after the login process click on start button
-After that, in the Instances page click on + Add new Instance button in order 
+Click on the Login button and then, after the login process click on the start button
+After that, on the Instances page click on "+ Add new Instance" button in order 
 to start a new playground
 
 =================================================================================
