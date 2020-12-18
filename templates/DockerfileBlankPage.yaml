@@ -1,0 +1,4 @@
+FROM nginx:latest
+LABEL maintainer 'Renato Matos'
+WORKDIR /usr/share/nginx/html
+COPY ./index.html .

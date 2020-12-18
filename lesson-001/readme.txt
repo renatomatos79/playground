@@ -38,7 +38,8 @@ This message shows that your installation appears to be working correctly.
 
 =================================================================================
 
-downloading and running the alpine container in interactive mode... when the container be ready the container bash will be shown
+downloading and running the alpine container in interactive mode... 
+when the container be ready we are gonna get the terminal of the container 
 
 $ docker container run -it alpine
 Unable to find image 'alpine:latest' locally
@@ -89,9 +90,8 @@ See 'docker run --help'.
 =================================================================================
 
 let's do something more ambitious.. running the Nginx container exposing its internal door "80" using another external and mapped door "8080". 
-At the end PRESS CTRL+C to unlock the bash
 
-$ docker container run -p 8080:80 nginx
+$ docker container run -d -p 8080:80 nginx
 Unable to find image 'nginx:latest' locally
 latest: Pulling from library/nginx
 6ec7b7d162b2: Pull complete 
