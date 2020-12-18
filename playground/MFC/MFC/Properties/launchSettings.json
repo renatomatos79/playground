@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "MFC": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "USER_NAME": "Renato"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
