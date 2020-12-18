@@ -103,8 +103,9 @@ C:\Users\Família>curl http://localhost:56879/products
 
 In the next step we are gonna build a Dockerfile wich will build and host our application
 
-1. Create a Dockerfile using the content in this path 
+1. Create a Dockerfile using this path
 
+https://raw.githubusercontent.com/renatomatos79/playground/master/vs/CoreDockerApi/Dockerfile
 
 2. Building the Dockerfile image => docker build -t core-docker-api:1.0 .
 
