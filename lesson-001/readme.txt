@@ -30,7 +30,7 @@ This message shows that your installation appears to be working correctly.
 
 =================================================================================
 
-running our first container, as we can see it was downloaded in the step before
+running our first container again... as we can see it was already downloaded in the step before
  
 $ docker run hello-world
 Hello from Docker!
@@ -38,8 +38,7 @@ This message shows that your installation appears to be working correctly.
 
 =================================================================================
 
-downloading and running the alpine container in interactive mode... after the 
-container running will see ourselves into the containers' bash
+downloading and running the alpine container in interactive mode... when the container be ready the container bash will be shown
 
 $ docker container run -it alpine
 Unable to find image 'alpine:latest' locally
@@ -54,7 +53,7 @@ dev    home   media  opt    root   sbin   sys    usr
 
 =================================================================================
 
-showing all containers, the defalt is only running but using -a we can take all
+showing all containers, the default shows only running but using -a we can take all
 
 $ docker container ls -a
 CONTAINER ID   IMAGE         COMMAND     CREATED         STATUS                          PORTS     NAMES
@@ -73,7 +72,7 @@ dev    home   media  opt    root   sbin   sys    usr
 
 =================================================================================
 
-creating a new alpine image, but this name specifing a container name
+creating a new alpine image, but this time, we are gonna run a new container specifying its name
 
 $ docker container run --name myalpine -it alpine
 / # 
@@ -81,7 +80,7 @@ $ docker container run --name myalpine -it alpine
 =================================================================================
 
 let's try to run our myalpine container running the same command again.
-As we can see it is impossible for more than one container using the same name
+As we can see! it is impossible to run more than one container using the same name
 
 $ docker container run --name myalpine -it alpine
 docker: Error response from daemon: Conflict. The container name "/myalpine" is already in use by container "3d58655dc68c2caa313d29318c9abbf274489eff7fd0c8e772157cc05d8e8a2e". You have to remove (or rename) that container to be able to reuse that name.
@@ -89,8 +88,8 @@ See 'docker run --help'.
 
 =================================================================================
 
-let's do something more ambitious.. running the nginx container exposing the internal
-nginx door 80 using the door number 8080. At the end PRESS CTRL+C to unlock the bash
+let's do something more ambitious.. running the Nginx container exposing its internal door "80" using another external and mapped door "8080". 
+At the end PRESS CTRL+C to unlock the bash
 
 $ docker container run -p 8080:80 nginx
 Unable to find image 'nginx:latest' locally
@@ -112,8 +111,8 @@ Status: Downloaded newer image for nginx:latest
 
 =================================================================================
 
-Let's take the nginx container name.
-In the list below the nginx image has a container with zealous_lichterman name
+Let's take the Nginx container name.
+In the list below the Nginx, image is identified by the name zealous_lichterman name
 
 $ docker container ls -a
 CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS                  NAMES
@@ -125,16 +124,16 @@ fccf03fefe7b   hello-world   "/hello"                 46 minutes ago   Exited (0
 
 =================================================================================
 
-Another approach to find the container, it's sending the output list above to the
-grep using | like the sintaxe below
+Another approach to find our container, it's sending the output list above to the
+grep command using the operator "|" in the syntax below
 
 $ docker container ls -a | grep nginx
 fe6f76edf010   nginx         "/docker-entrypoint.…"   27 minutes ago   Up 25 minutes               0.0.0.0:8080->80/tcp   zealous_lichterman
 
 =================================================================================
 
-In our previous command we could identify nginx running and listening the door 8080
-Let's print the nginx output using CURL according to the sintaxy below
+In our previous command, we could identify the Nginx container which was running and listening to door number 8080
+Let's print the Nginx output using CURL according to the syntax below
 
 $ curl get http://localhost:8080
 curl: (6) Could not resolve host: get
@@ -166,7 +165,7 @@ Commercial support is available at
 
 =================================================================================
 
-how much memory and CPU nginx is consuming?
+How much memory and CPU Nginx is consuming?
 We can analyze these statistics using "stats" parameter 
 Use CTRL+C to leave the terminal
 
@@ -176,7 +175,7 @@ fe6f76edf010   zealous_lichterman   0.00%     5.68MiB / 31.4GiB   0.02%     632B
 
 =================================================================================
 
-Let's inspect the container content using "inspect" parameter 
+Let's inspect the container content using the "inspect" parameter 
 For that, we are gonna keep inspecting the Nginx container
 
 $ docker container inspect zealous_lichterman
@@ -410,8 +409,8 @@ $ docker container inspect zealous_lichterman
 
 =================================================================================
 
-Once more, using the grep command line we can filter the output content.
-For instance, let's identify the IP address the container 
+Once more, using the grep command line we can filter the output content. 
+For instance, let's identify the IP address of the container 
 
 $ docker container inspect zealous_lichterman | grep IP
             "LinkLocalIPv6Address": "",
@@ -430,13 +429,13 @@ $ docker container inspect zealous_lichterman | grep IP
                     "GlobalIPv6Address": "",
                     "GlobalIPv6PrefixLen": 0,
 
-Here we go againt, using CURL againt nginx! But this time over the nginx IP Adress
+Here we go again, using CURL against the Nginx! But this time over the nginx IP Address
 $ curl get http://172.17.0.2:8080
 curl: (6) Could not resolve host: get
 curl: (7) Failed to connect to 172.17.0.2 port 8080: Connection refused
 
-The connection was refused! The reason is because this is the internal IP address 
-To access the nginx page we must use our HOST IP address 
+The connection was refused! And the reason is that the IP address 172.17.0.2 is internal 
+In order to access the nginx page, we must use our HOST IP address 
 
 $ ifconfig | grep "inet addr"
           inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0
@@ -474,14 +473,14 @@ Commercial support is available at
 
 =================================================================================
 
-Let's identify the proccess which are still running in background
+Let's identify the background running process
 
 $ docker ps
 CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
 fe6f76edf010   nginx     "/docker-entrypoint.…"   47 minutes ago   Up 44 minutes   0.0.0.0:8080->80/tcp   zealous_lichterman
 
-Compare with the docker container ls output!
-Remember! docker container ls only list the running containers 
+Compare with the "docker container ls" output!
+Remember! "docker container ls" only lists the running containers 
 
 $ docker container ls
 CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
@@ -508,7 +507,7 @@ alpine        latest    389fef711851   43 hours ago    5.58MB
 nginx         latest    ae2feff98a0c   2 days ago      133MB
 hello-world   latest    bf756fb1ae65   11 months ago   13.3kB
 
-Ok! Now it pretty better copy and paste the truncated Image ID
+Ok! In fact, is pretty better copy and paste the truncated Image ID
 So, let's remove the image bf756fb1ae65 (hellow-world)
 
 $ docker image rm bf756fb1ae65
@@ -538,8 +537,8 @@ This message shows that your installation appears to be working correctly.
 
 =================================================================================
 
-Removing all containers 
-Using the command below we can list all containers IDs
+Using the command below we can list all containers IDs and then, using the operator $( )
+we are able to remove all containers 
 
 $ docker container ls -a -q
 fe6f76edf010
@@ -548,7 +547,7 @@ a7519b3f192f
 5a8f3268454a
 fccf03fefe7b
 
-And then, matching the previous result with delete container command we can run a powerful command 
+Finally, matching the previous result with the delete container command we are gonna build a powerful command 
 
 $ docker container rm -f $(docker container ls -a -q)
 fe6f76edf010
@@ -560,7 +559,7 @@ fccf03fefe7b
 $ docker container ls -a
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
-Again, let's repeat the commmand before but for now removing all images 
+Again, let's repeat the previous command, but for now, removing all images
 
 $ docker image rm -f $(docker image ls -q)
 Untagged: alpine:latest
@@ -578,3 +577,5 @@ Deleted: sha256:87c8a1d8f54f3aa4e05569e8919397b65056aa71cdf48b7f061432c98475eee9
 
 $ docker image ls -a
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+Thanks
