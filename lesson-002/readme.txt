@@ -106,13 +106,75 @@ $ curl http://localhost:8080/index.html
   
 =================================================================================
 
-Let's see another way to host our page into the Nginx application server
+Let's see another approach, using a Dockerfile, to host our page into the Nginx application server
+1. In the first line we specify the base image and version 
+2. In the second line we supply some label information (the image maintainer)
+3. In the third line the working folder will be the base Nginx folder
+4. In the last line we copy from the host server, the file index.html to the container 
+
+Attention!
+The .Dockerfile for this example must be in the same path of the index.html
 
 FROM nginx:latest
 LABEL maintainer 'Renato Matos'
 WORKDIR /usr/share/nginx/html
 COPY ./index.html .
 
+$ mkdir html 
+$ cd html 
+$ curl https://raw.githubusercontent.com/renatomatos79/playground/master/templates/DockerfileBlankPage.yaml >> Dockerfile
+$ cat Dockerfile 
+FROM nginx:latest
+LABEL maintainer 'Renato Matos'
+WORKDIR /usr/share/nginx/html
 
+Let's build and tag our image 
 
+$ docker image build -t blankpage:1.0.1 .
+Sending build context to Docker daemon  99.84kB
+Step 1/4 : FROM nginx:latest
+ ---> ae2feff98a0c
+Step 2/4 : LABEL maintainer 'Renato Matos'
+ ---> Running in c8e7c517bea8
+Removing intermediate container c8e7c517bea8
+ ---> a78c74447f4e
+Step 3/4 : WORKDIR /usr/share/nginx/html
+ ---> Running in c99bdd9d40d7
+Removing intermediate container c99bdd9d40d7
+ ---> 0e3b3d28bdbe
+Step 4/4 : COPY ./index.html .
+ ---> f6c8a61815a5
+Successfully built f6c8a61815a5
+Successfully tagged blankpage:1.0.1
+
+Let's run our new NGinx container with our inde BlankPage
+
+$ docker container run -d --name nginxsrv2 -p 8081:80 blankpage:1.0.1
+$ curl http://localhost:8081
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
 
