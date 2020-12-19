@@ -89,7 +89,7 @@ See 'docker run --help'.
 
 =================================================================================
 
-let's do something more ambitious.. running the Nginx container exposing its internal door "80" using another external and mapped door "8080". 
+let's do something more ambitious.. running the Nginx container exposing its internal port "80" using another external and mapped port "8080". 
 
 $ docker container run -d -p 8080:80 nginx
 Unable to find image 'nginx:latest' locally
@@ -132,7 +132,7 @@ fe6f76edf010   nginx         "/docker-entrypoint.…"   27 minutes ago   Up 25 m
 
 =================================================================================
 
-In our previous command, we could identify the Nginx container which was running and listening to door number 8080
+In our previous command, we could identify the Nginx container which was running and listening to port number 8080
 Let's print the Nginx output using CURL according to the syntax below
 
 $ curl get http://localhost:8080
