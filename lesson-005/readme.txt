@@ -1,6 +1,6 @@
 Hello dockers,
 
-In lesson 004 we learn how to build our docker image,
+In lesson 004 we learned how to build our docker image,
 deploy it to the docker hub and finally create a container 
 using docker playground just to simulate a production env.
 
@@ -17,7 +17,7 @@ Are you ready?
    
 2. Create a new terminal using Add new instance button
    
-3. Run the code below to run a Redis container 
+3. Run the code below in order to run a Redis container 
 
 $ docker run --name redisserver -d -p 6379:6379 redis
 Unable to find image 'redis:latest' locally
@@ -37,39 +37,39 @@ Status: Downloaded newer image for redis:latest
 $ docker exec -it redisserver bash
 root@87bb052ce6d2:/data# 
 
-5. Go to the /usr/local/bin folder
+5. Inside the container terminal - Go to the /usr/local/bin folder
 
 $ root@87bb052ce6d2:/# cd /usr/local/bin
 
-6. Run the redis client using ./redis-cli
+6. Inside the container terminal - Run the redis client using ./redis-cli
 
 root@87bb052ce6d2:/usr/local/bin# ./redis-cli
 127.0.0.1:6379> 
 
-7. Create a cache item named list using "mset list 'a, b, c, d, e'"
+7. (Using redis-cli) Create a cache item named list using "mset list 'a, b, c, d, e'"
 
 root@87bb052ce6d2:/usr/local/bin# ./redis-cli
 127.0.0.1:6379> mset list "a, b, c, d, e"
 OK
 
-8. Print the TTL available, before expires a specific cache item using "ttl list"
+8. (Using redis-cli) Print the TTL available, before expires a specific cache item using "ttl list"
 
 127.0.0.1:6379> ttl list
 (integer) -1
 
 Attention! When the TTL is -1 the item will never expire
 
-9. Let's print the cache value using "mget list"
+9. (Using redis-cli) Let's print the cache value using "mget list"
 
 127.0.0.1:6379> mget list
 1) "a, b, c, d, e"
 
-10. Let's see how to define a new TTL in seconds for our cache item 
+10. (Using redis-cli) Let's see how to define a new TTL in seconds for our cache item 
 
 27.0.0.1:6379> expire list 20
 (integer) 1
 
-11. After 20 seconds, try to get the cache value again
+11. (Using redis-cli) After 20 seconds, try to get the cache value again
 
 127.0.0.1:6379> mget list
 1) (nil)
