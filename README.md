@@ -1,7 +1,7 @@
 # Hello Dockers and C# Developers
 The samples into this repository were created to help you to start to build your apps using Containers
 
-In the video below, you will find a summary of this project: <br>
+In the video below, you will find a fast project overview: <br>
 https://www.youtube.com/watch?v=UTdnbA0Flqs
 
 Link to use Docker Playground: <br>
