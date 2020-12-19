@@ -4,8 +4,6 @@ Thus far, we just build local images.
 But at this specific moment, we are gonna do something different:
 - Let's set up our docker locally in our host
 - build and deliver our .NET Core APIs using Docker
-- Create a remote repository using docker hub
-- Finally, install our docker images using our playground home page 
 
 Are you ready to docker?
 
