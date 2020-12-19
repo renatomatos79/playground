@@ -18,8 +18,10 @@ https://github.com/renatomatos79/playground/tree/master/lesson-002
 https://github.com/renatomatos79/playground/tree/master/lesson-003
 
 1. In the lesson-004 folder we are gonna learn how to deploy our images into the Docker Hub and use them over the docker instances: <br>
+https://github.com/renatomatos79/playground/tree/master/lesson-004
 
 1. In the lesson-005 folder let's play with Redis creating, updating, getting and expiring items from the cache: <br>
+https://github.com/renatomatos79/playground/tree/master/lesson-005
 
 1. In vs/CoreDockerApi folder you will find the whole application used to build your PlayGround: <br>
 https://github.com/renatomatos79/playground/tree/master/vs/CoreDockerApi
