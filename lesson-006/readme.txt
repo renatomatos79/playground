@@ -273,7 +273,7 @@ https://github.com/renatomatos79/playground/tree/master/vs/CoreDockerApiWithRedi
 	
 	curl -X PUT http://localhost:8001/products/products -H "content-type: application/json" -d "[{\"Id\":1,\"Name\":\"From cache\",\"Price\":1.5}]"
 	
-	Let's confir the list size has decreased according to the items we had sent to the cache 
+	Let's confirm the list size has decreased according to the items we had sent to the cache 
 	
 	C:\Temp\docker-k8s\vs\CoreDockerApiWithRedis>curl http://localhost:8001/products
 	[{"id":1,"name":"From cache","price":1.5}]
