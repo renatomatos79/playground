@@ -1,0 +1,21 @@
+version: '3'
+networks:
+  ntw_redis:
+services:
+    redissrv:
+        image: redis:latest
+        ports:
+          - 6379:6379
+        networks:
+          - ntw_redis
+    api:
+        image: core-docker-api:1.1
+        ports:
+          - 8001:80
+        environment:
+          - REDIS_HOST=redissrv:6379 
+        networks:
+          - ntw_redis
+        depends_on:
+          - redissrv
+          
