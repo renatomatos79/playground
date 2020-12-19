@@ -7,7 +7,20 @@ the dependency connection between our connection more beautiful and easy to hand
 
 Love it!
 
-1. So, let's start using DockerCompose
+So, let's start using Docker Compose
+
+Attention!
+The compose file is available at this URL
+https://github.com/renatomatos79/playground/blob/master/lesson-007/docker-compose.yaml
+
+
+1. Open a new docker playground browse instance 
+   https://labs.play-with-docker.com/
+   
+2. Create a directory for our docker-compose file 
+   mkdir dk-compose
+   cd dk-compose
+
 
 
 

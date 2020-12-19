@@ -279,4 +279,17 @@ https://github.com/renatomatos79/playground/tree/master/vs/CoreDockerApiWithRedi
 	[{"id":1,"name":"From cache","price":1.5}]
 	
 	
+17. The really last step involves send the new image to hub
 	
+	$ docker tag core-docker-api:1.1 renatomatos79/apis:core-docker-api-1.1
+	
+	$ docker image push renatomatos79/apis:core-docker-api-1.1
+	The push refers to repository [docker.io/renatomatos79/apis]
+	427595a48f25: Pushed
+	f56e906af74c: Layer already exists
+	7e9226471ff7: Layer already exists
+	7f99acd124a6: Layer already exists
+	ade80c04318a: Layer already exists
+	0916aa79e133: Layer already exists
+	87c8a1d8f54f: Layer already exists
+	core-docker-api-1.1: digest: sha256:935d4ede95b4446c3bdf844055cd3a1aa1d756184edb723240773d7c50b1d77d size: 1793

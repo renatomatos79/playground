@@ -9,7 +9,7 @@ services:
         networks:
           - ntw_redis
     api:
-        image: core-docker-api:1.1
+        image: renatomatos79/apis:core-docker-api-1.1
         ports:
           - 8001:80
         environment:
