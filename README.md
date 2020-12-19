@@ -4,6 +4,9 @@ The samples into this repository were created to help you to start to build your
 In the video below, you will find a summary of this project: <br>
 https://www.youtube.com/watch?v=UTdnbA0Flqs
 
+Link to use Docker Playground: <br>
+https://labs.play-with-docker.com/
+
 Let me index this Repo
 1. The lesson-001 folder contains the basic docker commands to help you to start using docker images and containers commands: <br>
 https://github.com/renatomatos79/playground/tree/master/lesson-001
