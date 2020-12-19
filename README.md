@@ -23,6 +23,9 @@ https://github.com/renatomatos79/playground/tree/master/lesson-004
 1. In the lesson-005 folder let's play with Redis creating, updating, getting and expiring items from the cache: <br>
 https://github.com/renatomatos79/playground/tree/master/lesson-005
 
+1. In the lesson-006 folder let's refactor our Api and prepare it to support the redis cache: <br>
+https://github.com/renatomatos79/playground/tree/master/lesson-006
+
 1. In vs/CoreDockerApi folder you will find the whole application used to build your PlayGround: <br>
 https://github.com/renatomatos79/playground/tree/master/vs/CoreDockerApi
 
