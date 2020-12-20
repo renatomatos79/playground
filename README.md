@@ -29,6 +29,9 @@ https://github.com/renatomatos79/playground/tree/master/lesson-006
 1. In the lesson-007 folder, we are gonna replace many docker files commands with the single Docker Compose and create a strong dependency between our services: <br>
 https://github.com/renatomatos79/playground/tree/master/lesson-007
 
+1. In the lesson-008 folder, we are gonna build our cluster using Docker Swarm with three nodes and run our services in order to verify the high availability of our API: <br>
+https://github.com/renatomatos79/playground/tree/master/lesson-008
+
 1. In vs/CoreDockerApi folder you will find the whole application used to build your PlayGround: <br>
 https://github.com/renatomatos79/playground/tree/master/vs/CoreDockerApi
 
